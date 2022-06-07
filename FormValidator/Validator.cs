@@ -1,4 +1,5 @@
 ﻿using System.Text.RegularExpressions;
+using PracZaliczeniowa.Enums;
 namespace PracZaliczeniowa.FormValidator
 {
     static class Validator
@@ -13,7 +14,7 @@ namespace PracZaliczeniowa.FormValidator
                 }
             }
         }
-        
+
         public static List<string> ValidateFirstName(string FirstName)
         {
             List<string> Error = new List<string>();
@@ -74,24 +75,77 @@ namespace PracZaliczeniowa.FormValidator
             return Error;
         }
 
-        public static void ValidateAge(string input, int min, int max)
+        public static List<string> ValidateAge(string Age, int min, int max)
         {
-
+            List<string> Error = new List<string>();
+            string nameOf = nameof(Age);
+            if (Age == null)
+            {
+                Error.Add($"{nameOf} jest puste.");
+                return Error;
+            }
+            Validate(nameOf,
+                !int.TryParse(Age, out int age),
+                "Nie jest liczbą.", ref Error);
+            Validate(nameOf,
+                age > max,
+                "Zbyt wysoki wiek.", ref Error);
+            Validate(nameOf,
+                age < min,
+                "Zbyt niski wiek.", ref Error);
+            return Error;
         }
 
-        public static void ValidateGender(string input)
+        public static List<string> ValidateGender(string Gender)
         {
-
+            List<string> Error = new List<string>();
+            string nameOf = nameof(Gender);
+            if (Gender == null)
+            {
+                Error.Add($"{nameOf} jest puste.");
+                return Error;
+            }
+            Validate(nameOf,
+                Gender.ToLower() != "mężczyzna" || Gender.ToLower() != "kobieta",
+                "Nie podano prawidłowej płci.", ref Error);
+            return Error;
         }
 
-        public static void ValidateEducation(string input)
+        public static List<string> ValidateEducation(string Education)
         {
-
+            List<string> Error = new List<string>();
+            string nameOf = nameof(Education);
+            if (Education == null)
+            {
+                Error.Add($"{nameOf} jest puste.");
+                return Error;
+            }
+            Validate(nameOf,
+                Education.ToLower() != "podstawowe" ||
+                Education.ToLower() != "zawodowe" ||
+                Education.ToLower() != "średnie" ||
+                Education.ToLower() != "wyższe",
+                "Nie podano prawidłowego wykształcenia", ref Error);
+            Validate(nameOf,
+                Education.ToLower() != "średnie" ||
+                Education.ToLower() != "wyższe",
+                "Brak wymaganego wykształcenia.", ref Error);
+            return Error;
         }
 
-        public static void ValidateEmail(string input)
+        public static List<string> ValidateEmail(string Email)
         {
-
+            List<string> Error = new List<string>();
+            string nameOf = nameof(Email);
+            if (Email == null)
+            {
+                Error.Add($"{nameOf} jest puste.");
+                return Error;
+            }
+            Validate(nameOf,
+                !Regex.IsMatch(Email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,})+)$"),
+                "Nieprawidłowy email.", ref Error);
+            return Error;
         }
     }
 }
