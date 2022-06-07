@@ -7,10 +7,11 @@ namespace PracZaliczeniowa
     {
         static void Main(string[] args)
         {
-            var form = new FormSchool();
-            form.FirstName = "aSSS";
-            form.LastName = "dsa";
-            form.ValidateForm();
+            List <IForm> form = new List<IForm>();
+            IForm forma = new FormSchool();
+            forma.FirstName = "aSSS";
+            forma.LastName = "dsa";
+            forma.ValidateForm();
         }
     }
 }

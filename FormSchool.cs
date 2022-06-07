@@ -9,7 +9,7 @@ namespace PracZaliczeniowa
         private Logger logger = new Logger(nameof(FormSchool));
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public uint PESEL;
+        public string PESEL;
         public bool ValidateForm()
         {
             var FirstNameErrors = Validator.ValidateFirstName(this.FirstName);
