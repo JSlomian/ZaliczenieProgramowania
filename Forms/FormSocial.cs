@@ -20,16 +20,16 @@ namespace PracZaliczeniowa.Forms
         {
             Console.Clear();
             Console.WriteLine("Podaj imię: ");
-            FirstName = Console.ReadLine();
+            FirstName = Console.ReadLine() ?? string.Empty;
             Console.Clear();
             Console.WriteLine("Podaj nazwisko: ");
-            LastName = Console.ReadLine();
+            LastName = Console.ReadLine() ?? string.Empty;
             Console.Clear();
             Console.WriteLine("Podaj email: ");
-            Email = Console.ReadLine();
+            Email = Console.ReadLine() ?? string.Empty;
             Console.Clear();
             Console.WriteLine("Podaj wiek: ");
-            Age = Console.ReadLine();
+            Age = Console.ReadLine() ?? string.Empty;
             Console.Clear();
         }
         public void ValidateForm()

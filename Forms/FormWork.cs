@@ -7,7 +7,7 @@ namespace PracZaliczeniowa.Forms
     {
         public string FirstName { get; set; } = string.Empty;
         public string LastName { get; set; } = string.Empty;
-        public string Age { get; set; } = "0";
+        public string Age { get; set; } = string.Empty;
         public string Gender { get; set; } = string.Empty;
         public string Education { get; set; } = string.Empty;
         public Validator Validator;
@@ -21,13 +21,13 @@ namespace PracZaliczeniowa.Forms
         {
             Console.Clear();
             Console.WriteLine("Podaj imię: ");
-            FirstName = Console.ReadLine();
+            FirstName = Console.ReadLine() ?? string.Empty;
             Console.Clear();
             Console.WriteLine("Podaj nazwisko: ");
-            LastName = Console.ReadLine();
+            LastName = Console.ReadLine() ?? string.Empty;
             Console.Clear();
             Console.WriteLine("Podaj wiek: ");
-            Age = Console.ReadLine();
+            Age = Console.ReadLine() ?? string.Empty;
             Console.Clear();
             string GenderPrompt = "Wybierz płeć:";
             string[] Genders = { "Mężczyzna", "Kobieta" };

@@ -5,10 +5,10 @@ namespace PracZaliczeniowa.Forms
 {
     public class FormSchool : IForm
     {
-        public string FirstName { get; set; } = string.Empty;
-        public string LastName { get; set; } = string.Empty;
+        public string FirstName { set; get; } = string.Empty;
+        public string LastName { set; get; } = string.Empty;
         public string PESEL { get; set; } = string.Empty;
-        public Validator Validator;
+        private Validator Validator;
         public FormSchool()
         {
             Validator = new Validator();
@@ -19,13 +19,13 @@ namespace PracZaliczeniowa.Forms
         {
             Console.Clear();
             Console.WriteLine("Podaj imię: ");
-            FirstName = Console.ReadLine();
+            FirstName = Console.ReadLine() ?? string.Empty;
             Console.Clear();
             Console.WriteLine("Podaj nazwisko: ");
-            LastName = Console.ReadLine();
+            LastName = Console.ReadLine() ?? string.Empty;
             Console.Clear();
             Console.WriteLine("Podaj numer PESEL: ");
-            PESEL = Console.ReadLine();
+            PESEL = Console.ReadLine() ?? string.Empty;
             Console.Clear();
         }
         public void ValidateForm()
