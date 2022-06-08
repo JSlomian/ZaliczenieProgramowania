@@ -1,13 +1,13 @@
 ﻿using PracZaliczeniowa.FormValidator;
-using PracZaliczeniowa.ErrorLogger;
+using Form;
 
-namespace PracZaliczeniowa
+namespace PracZaliczeniowa.Forms
 {
     public class FormSchool : IForm
     {
-        public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public string PESEL;
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public string PESEL { get; set; } = string.Empty;
         public Validator Validator;
         public FormSchool()
         {
@@ -17,7 +17,12 @@ namespace PracZaliczeniowa
         }
         public void GetData()
         {
-
+            Console.WriteLine("Podaj Imię: ");
+            FirstName = Console.ReadLine();
+            Console.WriteLine("Podaj Nazwisko: ");
+            LastName = Console.ReadLine();
+            Console.WriteLine("Podaj numer PESEL: ");
+            PESEL = Console.ReadLine();
         }
         public void ValidateForm()
         {
@@ -28,8 +33,10 @@ namespace PracZaliczeniowa
             {
                 Validator.Error.setValid(true);
             }
-
-            Validator.Error.listErrors(Validator.Error.FormName);
+            else
+            {
+                Validator.Error.listErrors(Validator.Error.FormName);
+            }
         }
     }
 }

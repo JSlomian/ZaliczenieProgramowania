@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracZaliczeniowa", "PracZaliczeniowa.csproj", "{F09985CE-FBA1-438B-8DB2-5DAEA67822EE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form", "..\Formularz\Form.csproj", "{C4637F97-A037-4173-9A0C-8355A9A13A76}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F09985CE-FBA1-438B-8DB2-5DAEA67822EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F09985CE-FBA1-438B-8DB2-5DAEA67822EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F09985CE-FBA1-438B-8DB2-5DAEA67822EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C4637F97-A037-4173-9A0C-8355A9A13A76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C4637F97-A037-4173-9A0C-8355A9A13A76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C4637F97-A037-4173-9A0C-8355A9A13A76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C4637F97-A037-4173-9A0C-8355A9A13A76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

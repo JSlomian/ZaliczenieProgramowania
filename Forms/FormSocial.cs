@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PracZaliczeniowa
+namespace PracZaliczeniowa.Forms
 {
-    internal class FormWork
+    internal class FormSocial
     {
     }
 }
