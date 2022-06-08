@@ -19,19 +19,23 @@ namespace PracZaliczeniowa.Forms
         }
         public void GetData()
         {
+            Console.Clear();
             Console.WriteLine("Podaj imię: ");
             FirstName = Console.ReadLine();
+            Console.Clear();
             Console.WriteLine("Podaj nazwisko: ");
             LastName = Console.ReadLine();
+            Console.Clear();
             Console.WriteLine("Podaj wiek: ");
             Age = Console.ReadLine();
-
+            Console.Clear();
             string GenderPrompt = "Wybierz płeć:";
             string[] Genders = { "Mężczyzna", "Kobieta" };
             Gender = new OptionsMenu(GenderPrompt, Genders).getOptionString();
             string EduPrompt = "Wybierz wykształcenie:";
             string[] Edus = { "Podstawowe", "Zawodowe", "Średnie", "Wyższe" };
             Education = new OptionsMenu(EduPrompt, Edus).getOptionString();
+            Console.Clear();
         }
         public void ValidateForm()
         {

@@ -47,7 +47,6 @@ namespace PracZaliczeniowa.FormValidator
 
         public void ValidateGender(string inputName, string inputData)
         {
-            Console.WriteLine(inputData);
             Validate(inputName, inputData, inputData.Length < 1, "Jest puste.");
             Validate(inputName, inputData, inputData.Length > 0 && inputData.ToLower() != "mężczyzna" && inputData.ToLower() != "kobieta",
                 "Nie podano prawidłowej płci.");
@@ -55,7 +54,6 @@ namespace PracZaliczeniowa.FormValidator
 
         public void ValidateEducation(string inputName, string inputData)
         {
-            Console.WriteLine(inputData);
             Validate(inputName, inputData, inputData.Length < 1, "Jest puste.");
             Validate(inputName, inputData,
                 inputData.ToLower() != "podstawowe" &&
@@ -71,7 +69,7 @@ namespace PracZaliczeniowa.FormValidator
 
         public void ValidateEmail(string inputName, string inputData)
         {
-            Validate(inputName, inputData, inputData == null, "Jest puste.");
+            Validate(inputName, inputData, inputData.Length < 1, "Jest puste.");
             Validate(inputName, inputData, !Regex.IsMatch(inputData, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,})+)$"),
                 "Nieprawidłowy email.");
         }

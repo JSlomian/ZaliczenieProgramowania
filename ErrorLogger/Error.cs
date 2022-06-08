@@ -38,7 +38,7 @@ namespace PracZaliczeniowa.ErrorLogger
         {
             foreach(string Error in Errors)
             {
-                Console.WriteLine($"{formName}: {Error}");
+                Console.WriteLine($"{formName}: Error[{Errors.IndexOf(Error)}] = \"{Error}\"");
             }
         }
     }

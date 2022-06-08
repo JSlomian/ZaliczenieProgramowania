@@ -17,12 +17,16 @@ namespace PracZaliczeniowa.Forms
         }
         public void GetData()
         {
-            Console.WriteLine("Podaj Imię: ");
+            Console.Clear();
+            Console.WriteLine("Podaj imię: ");
             FirstName = Console.ReadLine();
-            Console.WriteLine("Podaj Nazwisko: ");
+            Console.Clear();
+            Console.WriteLine("Podaj nazwisko: ");
             LastName = Console.ReadLine();
+            Console.Clear();
             Console.WriteLine("Podaj numer PESEL: ");
             PESEL = Console.ReadLine();
+            Console.Clear();
         }
         public void ValidateForm()
         {
@@ -35,6 +39,7 @@ namespace PracZaliczeniowa.Forms
             }
             else
             {
+                Console.WriteLine($"{Validator.Error.FormName} wypełniono nieprawidłowo");
                 Validator.Error.listErrors(Validator.Error.FormName);
             }
         }

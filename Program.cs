@@ -8,7 +8,6 @@ namespace PracZaliczeniowa
     {
         static void Main()
         {
-            Console.SetBufferSize(200, 200);
             Console.OutputEncoding = Encoding.UTF8;
 
             while (true)
