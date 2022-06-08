@@ -9,6 +9,7 @@ namespace PracZaliczeniowa
     public class OptionsMenu
     {
         int Option = 0;
+        string OptionString = string.Empty;
         public OptionsMenu(string Prompt, string[] Options)
         {
             Menu(Prompt, Options);
@@ -16,6 +17,11 @@ namespace PracZaliczeniowa
         public int getOption()
         {
             return Option;
+        }
+
+        public string getOptionString()
+        {
+            return OptionString;
         }
         private void Menu(string Prompt, string[] Options)
         {
@@ -62,6 +68,7 @@ namespace PracZaliczeniowa
                     case ConsoleKey.Enter:
                         Menuloop = false;
                         Option = IndexArray;
+                        OptionString = Options[IndexArray];
                         break;
                 }
             }

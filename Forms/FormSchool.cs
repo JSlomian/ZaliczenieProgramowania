@@ -12,7 +12,7 @@ namespace PracZaliczeniowa.Forms
         public FormSchool()
         {
             Validator = new Validator();
-            Validator.Error.FormName = "Formularz szkolny";
+            Validator.Error.FormName = "Formularz do szkoły";
 
         }
         public void GetData()
