@@ -5,27 +5,31 @@ namespace PracZaliczeniowa
 {
     public class FormSchool : IForm
     {
-        private List<string> Error = new List<string>();
-        private Logger logger = new Logger(nameof(FormSchool));
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PESEL;
-        public bool ValidateForm()
+        public Validator Validator;
+        public FormSchool()
         {
-            var FirstNameErrors = Validator.ValidateFirstName(this.FirstName);
-            logger.Errors.AddRange(FirstNameErrors);
-            if (logger.Errors.Count < 1)
+            Validator = new Validator();
+            Validator.Error.FormName = "Formularz szkolny";
+
+        }
+        public void GetData()
+        {
+
+        }
+        public void ValidateForm()
+        {
+            Validator.ValidateText("Imię", FirstName, 5);
+            Validator.ValidateText("Nazwisko", LastName, 7);
+            Validator.ValidatePesel("PESEL", PESEL);
+            if (Validator.Error.Errors.Count < 1)
             {
-                logger.setValid(true);
+                Validator.Error.setValid(true);
             }
-            else
-            {
-                foreach (var error in logger.Errors)
-                {
-                    Console.WriteLine($"{logger.FormName}: {error}");
-                }
-            }
-            return true;
+
+            Validator.Error.listErrors(Validator.Error.FormName);
         }
     }
 }

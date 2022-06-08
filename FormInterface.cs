@@ -1,16 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace PracZaliczeniowa
+﻿namespace PracZaliczeniowa
 {
     interface IForm
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }
-
-        public bool ValidateForm();
+        public void GetData();
+        public void ValidateForm();
     }
 }

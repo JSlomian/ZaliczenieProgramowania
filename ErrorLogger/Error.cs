@@ -6,27 +6,27 @@ using System.Threading.Tasks;
 
 namespace PracZaliczeniowa.ErrorLogger
 {
-    internal class Logger
+    public class Error
     {
         public string FormName { get; set; }
         private bool Valid { get; set; } = false;
         public List<string> Errors { get; set; }
 
-        public Logger(string formName)
+        public Error()
         {
-            FormName = formName;
+            FormName = "";
             Valid = false;
             Errors = new List<string>();
         }
 
         public bool getValid()
         {
-            return this.Valid;
+            return Valid;
         }
 
         public void setValid(bool valid)
         {
-            this.Valid = valid;
+            Valid = valid;
         }
 
         public void addError(string msg)
@@ -34,11 +34,11 @@ namespace PracZaliczeniowa.ErrorLogger
             Errors.Add(msg);
         }
 
-        public void listErrors()
+        public void listErrors(string formName)
         {
             foreach(string Error in Errors)
             {
-                Console.WriteLine(Error);
+                Console.WriteLine($"{formName}: {Error}");
             }
         }
     }
