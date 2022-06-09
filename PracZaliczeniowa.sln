@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.2.32505.173
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracZaliczeniowa", "PracZaliczeniowa.csproj", "{F09985CE-FBA1-438B-8DB2-5DAEA67822EE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PracZaliczeniowa", ".\Program\PracZaliczeniowa.csproj", "{F09985CE-FBA1-438B-8DB2-5DAEA67822EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form", "..\Formularz\Form.csproj", "{C4637F97-A037-4173-9A0C-8355A9A13A76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Form", ".\Form\Form.csproj", "{C4637F97-A037-4173-9A0C-8355A9A13A76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

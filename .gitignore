@@ -1,3 +1,10 @@
 bin/
 obj/
 .vs/
+Program/bin/
+Program/obj/
+Program/.vs/
+Form/bin/
+Form/obj/
+Form/.vs/
+Backup/

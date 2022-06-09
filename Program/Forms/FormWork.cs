@@ -1,5 +1,5 @@
 ﻿using PracZaliczeniowa.FormValidator;
-using Form;
+using PracZaliczeniowa.Form;
 
 namespace PracZaliczeniowa.Forms
 {
