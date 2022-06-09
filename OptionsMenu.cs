@@ -10,6 +10,7 @@ namespace PracZaliczeniowa
     {
         int Option = 0;
         string OptionString = string.Empty;
+        string CtrlInfo = "Używaj strzałek góra, dół i entera żeby wybrać i potwierdzić";
         public OptionsMenu(string Prompt, string[] Options)
         {
             Menu(Prompt, Options);
@@ -30,7 +31,11 @@ namespace PracZaliczeniowa
             while (Menuloop)
             {
                 Console.Clear();
-                Console.WriteLine(Prompt);
+                Console.BackgroundColor = ConsoleColor.Blue;
+                Console.WriteLine($"{CtrlInfo}");
+                Console.BackgroundColor = ConsoleColor.Black;
+                Console.WriteLine($"{Prompt}");
+
                 for (int i = 0; i < Options.Length; i++)
                 {
 
