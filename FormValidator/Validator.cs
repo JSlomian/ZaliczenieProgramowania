@@ -41,8 +41,8 @@ namespace PracZaliczeniowa.FormValidator
             int age;
             Validate(inputName, inputData, inputData.Length < 1, "Jest puste.");
             Validate(inputName, inputData, inputData.Length > 0 && !int.TryParse(inputData, out age), "Nie jest liczbą.");
-            Validate(inputName, inputData, inputData.Length > 0 && !int.TryParse(inputData, out age) && (age > maxAge), "Zbyt wysoki wiek.");
-            Validate(inputName, inputData, inputData.Length > 0 && !int.TryParse(inputData, out age) && (age < minAge), "Zbyt niski wiek.");
+            Validate(inputName, inputData, inputData.Length > 0 && int.TryParse(inputData, out age) && (age > maxAge), "Zbyt wysoki wiek.");
+            Validate(inputName, inputData, inputData.Length > 0 && int.TryParse(inputData, out age) && (age < minAge), "Zbyt niski wiek.");
         }
 
         public void ValidateGender(string inputName, string inputData)
